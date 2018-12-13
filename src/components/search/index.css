@@ -1,0 +1,17 @@
+
+.search{
+    position: absolute;
+    top:5rem;
+    left: 1rem;
+    width: 20rem;
+    z-index: 501;
+}
+
+.test{
+    margin-top: 0.5rem;
+    width:20rem;
+    height: 40rem;
+    background-color: white;
+    padding: 0;
+    border-radius: 3px;
+}
