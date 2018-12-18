@@ -1,0 +1,88 @@
+.user{
+    position: absolute;
+    top:5rem;
+    right: 1rem;
+    background-color: rgba(255,255,255,1);
+    border: 1px solid #777777;
+    border-radius: 6px;
+}
+
+.drawBox{
+    position: absolute;
+    top:10rem;
+    right: 1rem;
+
+
+}
+
+.drawButton{
+    width: 3rem;
+    height: 3rem;
+    padding-top: 0.2em;
+    padding-bottom: 0rem;
+    padding-left:0.7rem;
+    padding-right: 0.7rem;
+    max-width: 40px;
+    max-height: 40px;
+    min-width: 22px;
+    min-height: 22px;
+    /* color: white;
+    background-color: rgba(60,60,60,0.8) */
+}
+
+.location{
+    position: absolute;
+    bottom: 1rem;
+    left: 110px;
+    font-size: 10px;
+    /* background-color: rgba(255,255,255,0.5) */
+}
+.leaflet-control-scale-line{
+    background: rgba(255, 255, 255, 0);
+}
+
+
+.zoomBox{
+    position: absolute;
+    bottom:13rem;
+    right: 1rem;
+}
+
+.overview{
+    position: absolute;
+    right: 0.1rem;
+    bottom: 0.1rem;
+    width: 13rem;
+    height: 12rem;
+    border: 1px solid #777777;
+    border-radius: 5px;
+}
+
+.layergroup{
+    position: absolute;
+    left: 1rem;
+    bottom: 5rem;
+    /* display: inline-block; */
+
+}:hover{
+    cursor: pointer;
+}
+
+.groupExpland{
+    display:inline-block;
+    float: left;
+}
+.groupitem{
+    width: 5rem;
+    height: 5rem;
+    border: 1px solid #777777;
+    border-radius: 5px;
+    display: inline-block; 
+    float: left;
+    margin-right: 0.2rem;
+}
+.groupitem:hover{
+    box-shadow:0px 0px 1px 1px rgb(0, 162, 255);
+    border-color: rgb(0, 162, 255)
+}
+

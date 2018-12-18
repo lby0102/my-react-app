@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {SMap} from '../../js/smartMap.js'
 import './index.css'
 
 
@@ -9,18 +10,31 @@ class MainMap extends Component{
 
     }
     componentDidMount=()=>{
-        let map=window.Z.zmap('mapDiv',{
+        let map=window.L.map('mapDiv',{
             center:[31.8687, 105.54291],
-            zoom:4
+            zoom:4,
+            zoomControl:false,
+            attributionControl:false
         });
         this.mainMap=map;
-        map.setMaxZoom(20)
-        //高德切片
-        map.addBaseLayerByUrl('GAODETILELAYER', {
-            url: 'http://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}'
-            // url: 'http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/{z}/{y}/{x}'
-        });
+        map.setMaxZoom(17);
+
+        // //高德切片
+        // let gdLayer=map.addBaseLayerByUrl('GAODETILELAYER', {
+        //     // url: 'http://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}'
+        //     url: 'http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/{z}/{y}/{x}'
+        // });
+
+        this.smap=new SMap();
+        this.smap.initLayerGroup(map);
+
+
         window.map=map;
+        window.smap=this.smap;
+
+        //添加比例尺
+        window.L.control.scale().addTo(map);
+
 
 
 
@@ -99,15 +113,15 @@ class MainMap extends Component{
     onComplete=(result)=>{
 
         window.map.setView([result.position.lat,result.position.lng],10);
-        window.map.addLayer(window.Z.circleMarker([result.position.lat,result.position.lng]));
+        window.map.addLayer(window.L.circleMarker([result.position.lat,result.position.lng]));
     }
     onSuccess=(result)=>{
         console.log(result);
 
         var longitude =result.coords.longitude;
         var latitude = result.coords.latitude;
-        window.map.setView([latitude,longitude],16);
-        window.map.addLayer(window.Z.circleMarker([latitude,longitude]));
+        window.map.setView([latitude,longitude],window.map.getZoom());
+        window.map.addLayer(window.L.circleMarker([latitude,longitude]));
     }
     onError=(e)=>{
         console.log(e);
@@ -117,7 +131,7 @@ class MainMap extends Component{
 
 
     render(){
-        return<div id='mapDiv' className="mapDiv" style={{width:"100%",height:"100%"}}>
+        return<div id='mapDiv' className="mapDiv">
         </div>
     }
 }
