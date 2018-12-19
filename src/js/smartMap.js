@@ -26,17 +26,17 @@ class SMap{
             "高德影像": this.gaodeLayers.image,
 
             "智图地图": this.geoqLayers.normal,
-            "智图多彩": this.geoqLayers.color,
+            //"智图多彩": this.geoqLayers.color,
             "智图午夜蓝": this.geoqLayers.purplishBlue,
             "智图灰色": this.geoqLayers.gray,
             "智图暖色": this.geoqLayers.warm,
-            "智图冷色": this.geoqLayers.cold,
+            //"智图冷色": this.geoqLayers.cold,
             "智图水系":this.geoqLayers.water,
         };
         this.currentBaseLayer=this.googleLayers.normal;
         this.overlays={"智图地铁":this.geoqLayers.subway,};
 
-        L.control.layers(this.baseLayers,this.overlays).addTo(map);
+        // L.control.layers(this.baseLayers,this.overlays).addTo(map);
 
     }
 

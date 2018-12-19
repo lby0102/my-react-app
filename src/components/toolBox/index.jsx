@@ -134,7 +134,14 @@ class MapToolBox extends Component{
                     <span className="groupitem">高德地图</span>
                     <span className="groupitem">高德影像</span>
                     <span className="groupitem">智图地图</span>
- 
+
+                    <span className="groupitem">天地图</span>
+                    <span className="groupitem">天地图影像</span>
+                    <span className="groupitem">智图午夜蓝</span>
+                    <span className="groupitem">智图灰色</span>
+                    <span className="groupitem">智图暖色</span>
+                    <span className="groupitem">智图水系</span>
+
                 </div>
             </div>
             {/* 功能图层 */}
